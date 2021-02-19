@@ -1,0 +1,37 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:alpine 
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: gin_rummy
+    ports:
+    # - <externalPort>:<internalPort>
+      - "6543:5432"
+    #volumes:
+    #  - db_vol:var/lib/postgres
+    networks:
+      - backend
+
+  user:
+    build: 
+      context: ./microservices
+      dockerfile: Dockerfile
+    ports:
+      - "9090:9090"
+    depends_on: 
+      - db
+    networks: 
+      - backend
+    
+    #deprecated
+    #links:
+    #  - db
+
+networks:
+  backend:
+
+volumes:
+  db_vol:

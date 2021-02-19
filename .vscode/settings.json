@@ -1,0 +1,31 @@
+{
+    "workbench.colorCustomizations": {
+        "debugConsole.warningForeground": "#a8a6a6",
+        "debugConsole.errorForeground": "#a8a6a6",
+        "debugConsole.sourceForeground": "#0c0",
+        "debugConsole.infoForeground": "#1a8a2d",
+        "debugView.valueChangedHighlight": "#ececf3"
+    },
+    "go.buildOnSave": "off",
+    "go.lintOnSave": "workspace",
+    "go.vetOnSave": "workspace",
+    "go.testOnSave": true,
+    "go.coverOnSave": true,
+    "go.formatTool": "gofmt",
+    "go.lintTool": "golangci-lint",
+    "go.logging.level": "verbose",
+    "go.trace.server": "messages",
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    "go.autocompleteUnimportedPackages": false,
+    "[go]":  {
+        "editor.formatOnSave": true
+    },
+    "go.useLanguageServer": true,
+    "go.goroot": "",
+    "go.gopath": "",
+    "go.inferGopath": false,
+    "go.gocodeAutoBuild": false,
+    "go.testFlags": [
+        "-v"
+    ],
+}

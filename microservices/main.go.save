@@ -1,0 +1,19 @@
+package main
+
+import (
+	"github.com/gin-gonic/gin"
+	"github.com/saneduck/gin_rummy/controllers"
+	"github.com/saneduck/gin_rummy/middleware"
+)
+
+func main() {
+	//r := gin.Default()
+	r := gin.New()
+	r.Use(gin.Recovery(), middleware.Logger())
+
+	r.GET("/", controllers.Get)
+	r.GET("/:spec", controllers.GetSpecific)
+	r.POST("/", controllers.Post)
+
+	r.Run(":9090")
+}
